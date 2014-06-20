@@ -35,7 +35,7 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest())
+	if (Sentry::check() === false)
 	{
 		if (Request::ajax())
 		{
@@ -43,15 +43,9 @@ Route::filter('auth', function()
 		}
 		else
 		{
-			return Redirect::guest('login');
+			return Redirect::guest(route('login'));
 		}
 	}
-});
-
-
-Route::filter('auth.basic', function()
-{
-	return Auth::basic();
 });
 
 /*
@@ -67,7 +61,7 @@ Route::filter('auth.basic', function()
 
 Route::filter('guest', function()
 {
-	if (Auth::check()) return Redirect::to('/');
+	if (Sentry::check() === false) return Redirect::to('/');
 });
 
 /*

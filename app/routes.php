@@ -34,3 +34,11 @@ Route::group(['prefix' => 'auth'], function() {
 
 
 });
+
+// Change the prefix to whatever you want, all URLs will stay intact.
+Route::group(['prefix' => 'admin', 'before' => ['auth']], function() {
+    Route::get('/', [
+        'as' => 'admin',
+        'uses' => 'Admin\Dashboard@index'
+    ]);
+});

@@ -22,6 +22,9 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello {{ Sentry::getUser()->email }} <b class="caret"></b></a>
           <ul class="dropdown-menu">
+            @if (Sentry::getUser()->isAdmin())
+            <li><a target="_blank" href="{{ route('admin') }}">Admin</a></li>
+            @endif
             <li><a href="{{ route('logout') }}">Logout</a></li>
           </ul>
         </li>

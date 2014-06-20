@@ -15,3 +15,8 @@ Just a simple starter for project using Laravel
 # Default values
 * Groups: Admin, User
 * Default admin account: `admin@localhost | n0password`
+
+# `User` model
+* For flexibility, open `app/config/packages/cartalyst/sentry/config.php` and
+change `users.model` to `User`. This is a class extended from 
+`\Cartalyst\Sentry\Users\Eloquent\User`.
