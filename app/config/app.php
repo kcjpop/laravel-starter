@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
         'Cartalyst\Sentry\SentryServiceProvider',
+        'Former\FormerServiceProvider',
 
 	),
 
@@ -192,6 +193,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 
         'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+        'Former' => 'Former\Facades\Former',
 
 	),
 

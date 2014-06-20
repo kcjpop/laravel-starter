@@ -11,7 +11,21 @@
 |
 */
 
-Route::get('/', function()
-{
+Route::get('/', ['as' => '/', function() {
 	return View::make('index');
+}]);
+
+Route::group(['prefix' => 'auth'], function() {
+
+    Route::get('login', ['as'   => 'login', function() {
+        Former::framework('TwitterBootstrap3');
+        return View::make('auth.login');
+    }]);
+
+    Route::post('login', [
+        'as'  => 'post.login',
+        'uses' => 'AuthController@login'
+    ]);
+
+
 });
