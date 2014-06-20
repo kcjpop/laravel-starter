@@ -12,7 +12,7 @@ class AuthController extends BaseController
 
             return Redirect::route('/');
         } catch (Exception $e) {
-            return Redirect::route('login')->withError($e);
+            return Redirect::route('login')->withErrors($e->getMessage(), 'login');
         }
     }
 

@@ -4,11 +4,10 @@
 <div class="container">
     <div class="col-md-6 col-md-offset-3">
         <h2>Welcome back</h2>
-        
-        @if ($errors->isEmpty() === false)
+        @if ($errors->login->count() > 0)
             <div class="alert alert-danger">
                 <strong>Error!</strong>
-                @foreach ($errors as $error)
+                @foreach ($errors->login->all() as $error)
                 <p>{{ $error }}</p>
                 @endforeach 
             </div>
