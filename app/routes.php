@@ -27,5 +27,10 @@ Route::group(['prefix' => 'auth'], function() {
         'uses' => 'AuthController@login'
     ]);
 
+    Route::get('logout', [
+        'as'   => 'logout',
+        'uses' => 'AuthController@logout'
+    ]);
+
 
 });
